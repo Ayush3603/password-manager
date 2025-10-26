@@ -16,7 +16,7 @@ const Navbar = () => {
             <Link className="hover:text-green-500" to="/contact">Contact</Link>
             <a
               className="hover:text-green-500"
-              href="https://github.com/shatrughantwt"
+              href="https://github.com/shatrughantwt/password-manager"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Github Profile"
