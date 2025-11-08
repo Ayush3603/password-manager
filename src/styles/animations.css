@@ -1,0 +1,299 @@
+/* 
+ * EDIT: Custom animations for PassOP - Complete animation library
+ * 
+ * HOW TO USE THESE ANIMATIONS:
+ * 1. Add class name to any HTML element (e.g., className="float-animation")
+ * 2. Customize duration by adding inline style: style={{animationDuration: "3s"}}
+ * 3. Add delay with: style={{animationDelay: "0.5s"}}
+ * 4. Control iteration: style={{animationIterationCount: "infinite"}}
+ */
+
+/* 
+ * FLOATING ANIMATION - Creates gentle up/down movement
+ * EDIT: Change translateY values to adjust float distance
+ * EDIT: Modify timing (0%, 50%, 100%) to change float rhythm
+ * USAGE: className="float-animation"
+ */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); /* EDIT: Starting position */
+  }
+  50% { 
+    transform: translateY(-20px); /* EDIT: Peak height - increase for more movement */
+  }
+}
+
+/* 
+ * PULSE GLOW ANIMATION - Creates breathing glow effect
+ * EDIT: Change rgba values to modify glow color
+ * EDIT: Adjust blur radius (20px, 40px) for glow intensity
+ * EDIT: Modify scale values for size pulsing
+ * USAGE: className="pulse-glow"
+ */
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); /* EDIT: Base glow - change color/intensity */
+    transform: scale(1); /* EDIT: Normal size */
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); /* EDIT: Peak glow - brighter/larger */
+    transform: scale(1.02); /* EDIT: Slightly larger - increase for more growth */
+  }
+}
+
+/* 
+ * GRADIENT SHIFT ANIMATION - Creates moving gradient effect
+ * EDIT: Change background-position percentages to modify movement pattern
+ * EDIT: Requires background-size: 200% 200% on element
+ * USAGE: className="gradient-shift" + background-size: 200% 200%
+ */
+@keyframes gradientShift {
+  0% { 
+    background-position: 0% 50%; /* EDIT: Start position - left side */
+  }
+  50% { 
+    background-position: 100% 50%; /* EDIT: Middle position - right side */
+  }
+  100% { 
+    background-position: 0% 50%; /* EDIT: End position - back to left */
+  }
+}
+
+/* 
+ * TYPING ANIMATION - Simulates text being typed
+ * EDIT: Change width values to control typing speed
+ * EDIT: Add steps() function for character-by-character effect
+ * USAGE: Apply to text container with overflow: hidden
+ */
+@keyframes typing {
+  from { 
+    width: 0; /* EDIT: Start with no visible text */
+  }
+  to { 
+    width: 100%; /* EDIT: End with full text visible */
+  }
+}
+
+/* 
+ * FADE IN UP ANIMATION - Elements slide up while fading in
+ * EDIT: Change translateY value to adjust slide distance
+ * EDIT: Modify opacity values for different fade effects
+ * USAGE: className="fade-in-up"
+ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0; /* EDIT: Start invisible */
+    transform: translateY(30px); /* EDIT: Start 30px below - increase for more dramatic effect */
+  }
+  to {
+    opacity: 1; /* EDIT: End fully visible */
+    transform: translateY(0); /* EDIT: End at normal position */
+  }
+}
+
+/* 
+ * SHAKE ANIMATION - Error feedback animation
+ * EDIT: Change translateX values to adjust shake intensity
+ * EDIT: Modify timing percentages to change shake rhythm
+ * USAGE: className="shake-error" (usually triggered by JavaScript)
+ */
+@keyframes shake {
+  0%, 100% { 
+    transform: translateX(0); /* EDIT: Normal position */
+  }
+  10%, 30%, 50%, 70%, 90% { 
+    transform: translateX(-5px); /* EDIT: Left shake - increase for more movement */
+  }
+  20%, 40%, 60%, 80% { 
+    transform: translateX(5px); /* EDIT: Right shake - increase for more movement */
+  }
+}
+
+/* 
+ * ANIMATION UTILITY CLASSES - Ready-to-use animation classes
+ * EDIT: Modify duration, timing-function, or iteration-count for each class
+ */
+
+/* 
+ * FLOAT ANIMATION CLASS
+ * EDIT: Change 6s to modify float speed (slower = higher number)
+ * EDIT: Change ease-in-out to linear, ease, ease-in, or ease-out
+ * EDIT: Change infinite to a number for limited repetitions
+ */
+.float-animation {
+  animation: float 6s ease-in-out infinite; /* EDIT: 6s duration, smooth easing, infinite loop */
+}
+
+/* 
+ * PULSE GLOW CLASS
+ * EDIT: Change 3s for faster/slower pulsing
+ * EDIT: Add animation-direction: alternate for different effect
+ */
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite; /* EDIT: 3s duration, smooth pulsing */
+}
+
+/* 
+ * GRADIENT SHIFT CLASS
+ * EDIT: background-size MUST be 200% 200% for this to work
+ * EDIT: Change 4s to modify gradient movement speed
+ */
+.gradient-shift {
+  background-size: 200% 200%; /* EDIT: Required for gradient movement */
+  animation: gradientShift 4s ease infinite; /* EDIT: 4s duration, smooth movement */
+}
+
+/* 
+ * FADE IN UP CLASS
+ * EDIT: Change 0.6s for faster/slower fade in
+ * EDIT: forwards keeps final state, remove for reset
+ */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards; /* EDIT: 0.6s duration, stays visible */
+}
+
+/* 
+ * SHAKE ERROR CLASS
+ * EDIT: Change 0.5s for longer/shorter shake
+ * EDIT: Usually triggered by JavaScript on form errors
+ */
+.shake-error {
+  animation: shake 0.5s ease-in-out; /* EDIT: 0.5s duration, runs once */
+}
+
+/* 
+ * HOVER LIFT EFFECT - Cards/buttons lift up on hover
+ * EDIT: Change transition duration (0.3s) for faster/slower hover
+ * EDIT: Modify translateY(-5px) to change lift height
+ * EDIT: Adjust box-shadow values for different shadow effects
+ * USAGE: className="hover-lift"
+ */
+.hover-lift {
+  transition: all 0.3s ease; /* EDIT: 0.3s smooth transition for all properties */
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px); /* EDIT: Lift 5px up - increase for more dramatic effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* EDIT: Shadow: x-offset y-offset blur-radius color */
+}
+
+/* 
+ * LOADING SPINNER - Rotating loading indicator
+ * EDIT: Change border width (3px) for thicker/thinner spinner
+ * EDIT: Modify colors (#f3f4f6 for track, #3b82f6 for active part)
+ * EDIT: Adjust width/height for different spinner sizes
+ * USAGE: <div className="spinner"></div>
+ */
+.spinner {
+  border: 3px solid #f3f4f6; /* EDIT: Track color - light gray */
+  border-top: 3px solid #3b82f6; /* EDIT: Active color - blue */
+  border-radius: 50%; /* EDIT: Makes it circular */
+  width: 24px; /* EDIT: Spinner width */
+  height: 24px; /* EDIT: Spinner height */
+  animation: spin 1s linear infinite; /* EDIT: 1s per rotation, constant speed */
+}
+
+/* 
+ * SPIN ANIMATION - For loading spinners
+ * EDIT: Linear timing ensures constant rotation speed
+ */
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); /* EDIT: Start position */
+  }
+  100% { 
+    transform: rotate(360deg); /* EDIT: Full rotation */
+  }
+}
+
+/* 
+ * GLASSMORPHISM EFFECT - Modern translucent glass appearance
+ * EDIT: Change rgba alpha (0.1) for more/less transparency
+ * EDIT: Modify blur(10px) for stronger/weaker blur effect
+ * EDIT: Adjust border opacity (0.2) for more/less visible border
+ * USAGE: className="glass-effect"
+ * NOTE: Works best over colorful backgrounds
+ */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1); /* EDIT: Semi-transparent white background */
+  backdrop-filter: blur(10px); /* EDIT: Blur background behind element */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* EDIT: Subtle border */
+}
+
+/* 
+ * NEON GLOW EFFECT - Creates glowing text effect
+ * EDIT: Modify blur values (5px, 10px, 15px, 20px) for different glow intensity
+ * EDIT: Change currentColor to specific color like #3b82f6 for custom glow
+ * EDIT: Add more text-shadow layers for stronger effect
+ * USAGE: className="neon-glow"
+ * NOTE: Works best on dark backgrounds
+ */
+.neon-glow {
+  text-shadow: 
+    0 0 5px currentColor,   /* EDIT: Inner glow - smallest blur */
+    0 0 10px currentColor,  /* EDIT: Medium glow */
+    0 0 15px currentColor,  /* EDIT: Outer glow */
+    0 0 20px currentColor;  /* EDIT: Outermost glow - largest blur */
+}
+
+/* EDIT: Particle background effect */
+.particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.particles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+  animation: float 8s ease-in-out infinite;
+}
+
+/* EDIT: Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+}
+
+/* EDIT: Selection styling */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #1e40af;
+}
+
+/* EDIT: Focus styles */
+.focus-ring:focus {
+  outline: none;
+  ring: 4px;
+  ring-color: rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+/* EDIT: Responsive animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

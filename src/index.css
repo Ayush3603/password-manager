@@ -1,7 +1,74 @@
+/* 
+ * EDIT: Global styles for PassOP Password Manager
+ * This file contains Tailwind CSS imports and custom component styles
+ */
+
+/* EDIT: Tailwind CSS import - Provides all utility classes */
 @import "tailwindcss";
 
+/* 
+ * EDIT: Custom component layer - Define reusable component styles here
+ * Tailwind's @layer directive ensures proper CSS ordering
+ */
 @layer components{
+    /* 
+     * EDIT: Main container class - Used throughout the app for consistent spacing
+     * - container: Tailwind's responsive container
+     * - px-40: Horizontal padding of 10rem (160px) - EDIT: Change for different padding
+     * - mx-auto: Centers the container horizontally
+     * - py-16: Vertical padding of 4rem (64px) - EDIT: Change for different vertical spacing
+     * 
+     * USAGE: className="mycontainer"
+     * RESPONSIVE EDITING:
+     * - Add responsive variants: @apply container px-4 md:px-20 lg:px-40 mx-auto py-8 md:py-16;
+     */
     .mycontainer{
         @apply container px-40 mx-auto py-16;
     }
 }
+
+/* 
+ * EDIT: Add custom utility classes here
+ * Example custom utilities you can add:
+ */
+
+/* 
+@layer utilities {
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .bg-pattern {
+        background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+    
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
+*/
+
+/* 
+ * EDIT: Global CSS reset and base styles
+ * Add any global styles that should apply to the entire app
+ */
+
+/* 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+*/
